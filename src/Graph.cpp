@@ -12,7 +12,8 @@ Graph::Graph(std::string _input,
              bool _decompose_concave_polygons,
              bool _simplify_fenestration_faces,
              bool _calculate_shadings,
-             bool _use_ifcopeningelelements_for_virtual_boundaries) :
+             bool _use_ifcopeningelelements_for_virtual_boundaries,
+             bool _use_spaces_for_virtual_boundaries) :
         input(std::move(_input)),
         output(std::move(_output)),
         num_threads(_num_threads),
@@ -24,7 +25,8 @@ Graph::Graph(std::string _input,
         decompose_concave_polygons(_decompose_concave_polygons),
         simplify_fenestration_faces(_simplify_fenestration_faces),
         calculate_shadings(_calculate_shadings),
-        use_ifcopening_elements_for_virtual_boundaries(_use_ifcopeningelelements_for_virtual_boundaries) {
+        use_ifcopening_elements_for_virtual_boundaries(_use_ifcopeningelelements_for_virtual_boundaries),
+        use_spaces_for_virtual_boundaries(_use_spaces_for_virtual_boundaries) {
 
     products.clear();
     ifc_faces.clear();
@@ -94,7 +96,6 @@ Graph::Graph(std::string _input,
     space_id_counter = 0;
     face_id_counter = 0;
     integrate_openings_into_walls = true;
-    use_spaces_for_virtual_boundaries = false;
 
     settings.set(IfcGeom::IteratorSettings::FASTER_BOOLEANS, true);
     settings.set(IfcGeom::IteratorSettings::SEW_SHELLS, true);

@@ -39,7 +39,8 @@ public:
           bool _decompose_concave_polygons,
           bool _simplify_fenestration_faces,
           bool _calculate_shadings,
-          bool _use_ifcopeningelelements_for_virtual_boundaries
+          bool _use_ifcopeningelelements_for_virtual_boundaries,
+          bool _use_spaces_for_virtual_boundaries
     );
 
     //! Starts space boundary generation

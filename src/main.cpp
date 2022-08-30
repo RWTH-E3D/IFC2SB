@@ -88,6 +88,7 @@ int main(int argc, char **argv) {
             ("simpleopening", "Simplify fenestration space boundaries")
             ("shadings", "Calculate shadings")
             ("virtualopening", "Use Ifcopeningelelements to create virtual space boundaries")
+            ("virtualbyspace", "Use IfcSpaces to create virtual space boundaries")
             ("length,l", po::value<double>(&transmission_length)->default_value(0.41, "0.41"), "Length to distinguish 2a/2b SB type");
 
     // Command line options
@@ -157,6 +158,7 @@ int main(int argc, char **argv) {
     bool simplify_fenestration_faces = vmap.count("simpleopening") == 1;
     bool calculate_shadings = vmap.count("shadings") == 1;
     bool use_ifcopeningelelements_for_virtual_boundaries = vmap.count("virtualopening") == 1;
+    bool use_spaces_for_virtual_boundaries = vmap.count("virtualbyspace") == 1;
 
     // output filename
     std::string output_filename;
@@ -226,6 +228,7 @@ int main(int argc, char **argv) {
     std::cout << "Simple Opening:      " << std::boolalpha << simplify_fenestration_faces << "\n";
     std::cout << "Shadings:            " << std::boolalpha << calculate_shadings << "\n";
     std::cout << "Virtual Opening:     " << std::boolalpha << use_ifcopeningelelements_for_virtual_boundaries << "\n";
+    std::cout << "Virtual by Spaces:   " << std::boolalpha << use_spaces_for_virtual_boundaries << "\n";
     std::cout << "-------------------------------------------------\n";
 
     std::cout << "\n-------------------------------------------------" << std::endl;
@@ -246,7 +249,8 @@ int main(int argc, char **argv) {
                 decompose_concave_polygons,
                 simplify_fenestration_faces,
                 calculate_shadings,
-                use_ifcopeningelelements_for_virtual_boundaries);
+                use_ifcopeningelelements_for_virtual_boundaries,
+                use_spaces_for_virtual_boundaries);
         status = G.run();
     } else if (clip) {
 
