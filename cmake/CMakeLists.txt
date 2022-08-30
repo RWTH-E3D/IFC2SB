@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 project(IFC2SB VERSION 1.0)
 
 # FLAG for static OCC, IFCOS, QT5
-OPTION(STATIC_OCC_IFCOS "Build IFC2SB and IFCRB with static OCC, IFCOpenShell and QT5" OFF)
+OPTION(STATIC_OCC_IFCOS "Build IFC2SB and SBV with static OCC, IFCOpenShell and QT5" OFF)
 
 # Create cache entries if absent for environment variables
 MACRO(UNIFY_ENVVARS_AND_CACHE VAR)
@@ -165,11 +165,11 @@ if (STATIC_OCC_IFCOS)
     SET(ADD_LIBS "pthread;dl;X11;xcb;Xau;Xdmcp;fontconfig;freetype;expat;png16;z;GL;xkbcommon;icui18n;icuuc;icudata;tbbmalloc;tbb;polyclipping;gmp;mpfr") # wouldn't compile without tbbmalloc;tbb stating explicite
     SET(STATIC_LIBS "${IFCOS_LIBRARIES};${OPENCASCADE_LIBS};")
     SET(TARGET_LIBS "${STATIC_LIBS};${STATIC_LIBS};${STATIC_LIBS};${Qt5Core_LIBRARIES};${Qt5Widgets_LIBRARIES};${Qt5Gui_LIBRARIES};${TBB_IMPORTED_TARGETS};${ADD_LIBS};${Boost_LIBRARIES};")
-    SET(TARGET_LIBS_IFCRB "${STATIC_LIBS};${STATIC_LIBS};${Qt5Core_LIBRARIES};${Qt5Widgets_LIBRARIES};${Qt5Gui_LIBRARIES};${ADD_LIBS};")
+    SET(TARGET_LIBS_SBV "${STATIC_LIBS};${STATIC_LIBS};${Qt5Core_LIBRARIES};${Qt5Widgets_LIBRARIES};${Qt5Gui_LIBRARIES};${ADD_LIBS};")
 else (STATIC_OCC_IFCOS)
     INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS} ${IFCOSG_INCLUDE_DIR} ${IFCOSP_INCLUDE_DIR} ${OpenCASCADE_INCLUDE_DIR} ${Qt5Core_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS} ${Qt5Gui_INCLUDE_DIRS} ${CLIPPER_INCLUDE_PATH})
     SET(TARGET_LIBS "${Qt5Core_LIBRARIES};${Qt5Widgets_LIBRARIES};${Qt5Gui_LIBRARIES};${OpenCASCADE_LIBRARIES};${TBB_IMPORTED_TARGETS};${IFCOS_LIBRARIES};${Boost_LIBRARIES};polyclipping;gmp;mpfr")
-    SET(TARGET_LIBS_IFCRB "${Qt5Core_LIBRARIES};${Qt5Widgets_LIBRARIES};${Qt5Gui_LIBRARIES};${OpenCASCADE_LIBRARIES};${IFCOS_LIBRARIES}")
+    SET(TARGET_LIBS_SBV "${Qt5Core_LIBRARIES};${Qt5Widgets_LIBRARIES};${Qt5Gui_LIBRARIES};${OpenCASCADE_LIBRARIES};${IFCOS_LIBRARIES}")
 endif (STATIC_OCC_IFCOS)
 
 # source files name extraction
@@ -189,23 +189,23 @@ target_link_libraries(
         ${TARGET_LIBS}
 )
 
-# IFCRB
-file(GLOB_RECURSE IFCRB_SOURCE_CPP ../sb_viewer/*.cpp)
-file(GLOB_RECURSE IFCRB_VIEWER_CXX ../src/viewer/*.cxx)
-file(GLOB_RECURSE IFCRB_VIEWER_CPP ../src/viewer/*.cpp)
+# SBV
+file(GLOB_RECURSE SBV_SOURCE_CPP ../sb_viewer/*.cpp)
+file(GLOB_RECURSE SBV_VIEWER_CXX ../src/viewer/*.cxx)
+file(GLOB_RECURSE SBV_VIEWER_CPP ../src/viewer/*.cpp)
 
-# add executable IFCRB
+# add executable SBV
 add_executable(
-        IFCRB
+        SBV
         ${MOC_HEADERS}
-        ${IFCRB_SOURCE_CPP}
-        ${IFCRB_VIEWER_CXX}
-        ${IFCRB_VIEWER_CPP}
+        ${SBV_SOURCE_CPP}
+        ${SBV_VIEWER_CXX}
+        ${SBV_VIEWER_CPP}
 )
 
 target_link_libraries(
-        IFCRB
-        ${TARGET_LIBS_IFCRB}
+        SBV
+        ${TARGET_LIBS_SBV}
 )
 
 # By default build type is set to Release

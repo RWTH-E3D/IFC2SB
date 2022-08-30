@@ -1,13 +1,13 @@
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 -----------
 
-# <img src="add/logo2.PNG" height="45"> &nbsp; Industry Foundation Classes to Space Boundaries
+# <img src="additionals/logo2.PNG" height="45"> &nbsp; Industry Foundation Classes to Space Boundaries
 **Generation of simulation geometries for CFD and BEPS.**  
 **Partially developed within the BIM2SIM project.**
 
 ## Installation on *nix
 ####  Prerequisites and dependencies
-An instruction (Dockerfile) can be found [here](add/Dockerfile)
+An instruction (Dockerfile) can be found [here](additionals/Dockerfile)
 
 **Miscellaneous**
 ```bash
@@ -61,7 +61,7 @@ STL result file:
 
 SB Viewer:
 ```bash
-./IFCRB /home/fluid/Downloads/IFCfiles/AC20-FZK-Haus_with_SB.ifc s
+./SBV /home/fluid/Downloads/IFCfiles/AC20-FZK-Haus_with_SB.ifc s
 s = 1 for 1stLvlSB, s = 2 for 2ndLvlSB
 ```
 
@@ -69,16 +69,16 @@ s = 1 for 1stLvlSB, s = 2 for 2ndLvlSB
 ## Results
 **Space Boundaries for BEPS as .ifc**   
 First level space boundaries, attributed according to IFC4   
-<img src="add/sb_first_1.png" height="200">
+<img src="additionals/sb_first_1.png" height="200">
 
 Second level space boundaries, attributed according to IFC4 (e.g. opening SBs, right image)   
-<img src="add/sb_second_1.png" height="200"> <img src="add/sb_second_4.png" height="200">
+<img src="additionals/sb_second_1.png" height="200"> <img src="additionals/sb_second_4.png" height="200">
 
 Spaces  
-<img src="add/sb_second_2.png" height="200">
+<img src="additionals/sb_second_2.png" height="200">
 
 **Geometry for CFD as .stl**   
-<img src="add/stl_1.png" height="200">
+<img src="additionals/stl_1.png" height="200">
 
 ## How to cite IFC2SB
 ```bibtex
@@ -104,7 +104,7 @@ Spaces
 ```
 
 ## Contact
-<img src="add/e3d.jpg" height="30">   
+<img src="additionals/e3d.jpg" height="30">   
 
 Eric Fichter   
 fichter@e3d.rwth-aachen.de  
