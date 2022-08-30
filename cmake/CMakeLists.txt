@@ -190,7 +190,7 @@ target_link_libraries(
 )
 
 # SBV
-file(GLOB_RECURSE SBV_SOURCE_CPP ../sb_viewer/*.cpp)
+file(GLOB_RECURSE SBV_SOURCE_CPP ../sbv/*.cpp)
 file(GLOB_RECURSE SBV_VIEWER_CXX ../src/viewer/*.cxx)
 file(GLOB_RECURSE SBV_VIEWER_CPP ../src/viewer/*.cpp)
 
