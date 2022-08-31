@@ -397,6 +397,23 @@ void Kernel::polygonize_products(std::list<Product> &products) {
 
 }
 
+void Kernel::collect_original_faces_clip(std::list<Product> &products, std::list<oFace> &orig_faces) {
+
+    auto start = std::chrono::high_resolution_clock::now();
+
+    for (auto &product: products) {
+        for (auto &face: Topo(product.shape).faces()) {
+            orig_faces.emplace_back(TopoDS::Face(face), &product, 0);
+            product.orig_faces.push_back(&orig_faces.back());
+            orig_faces.back().SetNormalStatus(FACE_NORMAL_KNOWN);
+        }
+    }
+
+    auto finish = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = finish - start;
+    std::cout << print_time(elapsed.count(), "Collect original faces", std::to_string(orig_faces.size()));
+}
+
 void Kernel::collect_original_faces(std::list<Product> &products, std::list<oFace> &orig_faces) {
 
     auto start = std::chrono::high_resolution_clock::now();

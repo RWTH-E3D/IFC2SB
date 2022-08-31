@@ -201,6 +201,8 @@ private:
 
     static void collect_original_faces(Product &product, std::list<oFace> &orig_faces);
 
+    static void collect_original_faces_clip(std::list<Product> &products, std::list<oFace> &orig_faces);
+
     void get_virtual_faces(std::unique_ptr<IfcParse::IfcFile> &model, ifcspaceInfoList &ifcspaces, std::list<oFace> &ifc_faces, std::list<Product> &products, std::set<IfcUtil::IfcBaseEntity *> &virtual_products);
 
     template<typename Schema>

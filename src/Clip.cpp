@@ -200,7 +200,7 @@ bool Clip::prepare_building_element_faces(Kernel &K, std::unordered_map<IfcUtil:
 
     //***************************************************************
     // Save all faces of product shapes
-    K.collect_original_faces(products, element_ifc_faces);
+    K.collect_original_faces_clip(products, element_ifc_faces);
     //***************************************************************
 
     //***************************************************************
