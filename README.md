@@ -1,7 +1,7 @@
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 -----------
 
-# <img src="add/logo2.PNG" height="45"> &nbsp; Industry Foundation Classes to Space Boundaries
+# Industry Foundation Classes to Space Boundaries <img src="add/logo2.PNG" height="45"> &nbsp; 
 **Generation of simulation geometries for CFD and BEPS.**  
 **Partially developed within the BIM2SIM project.**
 
