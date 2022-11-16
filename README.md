@@ -27,18 +27,22 @@ sudo apt-get install tcllib tklib tcl-dev tk-dev libfreetype-dev libxt-dev libxm
 sudo apt-get install libboost-all-dev libxml2-dev
 ```
 
-[**R-Trees: A Dynamic Index Structure for Spatial Searching**](https://github.com/nushoin/RTree)  
-Already included as header-only
-
 [**Clipper 6.4.2 - an open source freeware library for clipping and offsetting lines and polygons**](http://www.angusj.com/delphi/clipper.php)
 ```bash
 sudo apt-get install libpolyclipping-dev 
 ```
 
-[**(CGAL)**](https://www.cgal.org/)
-```bash
-sudo apt-get install libcgal-dev
-```
+[**R-Trees: A Dynamic Index Structure for Spatial Searching**](https://github.com/nushoin/RTree)    
+Already included as header-only  
+
+[**Triangle: A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator**](https://www.cs.cmu.edu/~quake/triangle.html)  
+Already included as header-only  
+
+[**ConvexDecomposition: Decomposing and slicing concave polygons into convex polygons**](https://github.com/mjjq/ConvexDecomposition)  
+Already included as header-only  
+
+[**STL Reader: Read STL geometry files into user provided containers**](https://github.com/sreiter/stl_reader)  
+Already included as header-only  
 
 ####  Build
 ```bash
