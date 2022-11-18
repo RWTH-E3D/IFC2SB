@@ -1,4 +1,5 @@
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) 
+[![License: LGPL v3](https://img.shields.io/badge/C++-Solutions-blue.svg?style=flat&logo=c%2B%2B)](https://cplusplus.com/) 
 -----------
 
 # Industry Foundation Classes to Space Boundaries <img src="add/logo2.PNG" height="45"> &nbsp; 
