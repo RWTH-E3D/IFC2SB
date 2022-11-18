@@ -6,7 +6,7 @@
 **Generation of simulation geometries for CFD and BEPS.**  
 **Partially developed within the BIM2SIM project.**
 
-## Installation on *nix
+## Installation on Linux
 ####  Prerequisites and dependencies
 An instruction (Dockerfile) can be found [here](add/Dockerfile)
 
