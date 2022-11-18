@@ -2,7 +2,7 @@
 [![License: LGPL v3](https://img.shields.io/badge/C++-Solutions-blue.svg?style=flat&logo=c%2B%2B)](https://cplusplus.com/) 
 -----------
 
-# Industry Foundation Classes to Space Boundaries <img src="add/logo2.PNG" height="45"> &nbsp; 
+# IFC2SB: Industry Foundation Classes to Space Boundaries <img src="add/logo2.PNG" height="45"> &nbsp; 
 **Generation of simulation geometries for CFD and BEPS.**  
 **Partially developed within the BIM2SIM project.**
 
