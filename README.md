@@ -6,6 +6,14 @@
 **Generation of simulation geometries for CFD and BEPS.**  
 **Partially developed within the BIM2SIM project.**
 
+## Idea   
+Generates watertight and valid space geometries from IFC4 building geometry.   
+Full attribution according to IFC4 standard.   
+Resolves issues like clashes and gaps.    
+CFD-mode: Exports an STL with solids representing spaces (closed air volumes).  
+BEPS-mode: Exports an IFC4 with generated IfcSpace, IfcRelSpaceBoundary1stLevel and IfcRelSpaceBoundary2ndLevel entities.  
+Prerequisites: IFC4 file with 3D building geometries (especially IfcBuildingElements).   
+
 ## Installation on Linux
 ####  Prerequisites and dependencies
 An instruction (Dockerfile) can be found [here](add/Dockerfile)
